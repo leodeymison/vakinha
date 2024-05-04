@@ -1114,9 +1114,10 @@
                       <div class="sc-cfxfcM cckXDW"><span title="" class=""
                           data-clipboard-text="enchentes@vakinha.com.br">
                           <div class="sc-fbKhjd fLXbKh">
-                            <div><span class="sc-ejfMa-d ecGEeI"><strong>enchentes@vakinha.com.br</strong></span></div>
-                            <div class="sc-cfxfcM dgBgz"><svg class="sc-fiCwlc gJocwq" viewBox="350 0 766 758"
-                                width="25" height="25">
+                            <div><span class="sc-ejfMa-d ecGEeI"><strong
+                                  id="pix-copi">enchentes@vakinha.com.br</strong></span></div>
+                            <div class="sc-cfxfcM dgBgz"><svg onclick="copiPix()" class="sc-fiCwlc gJocwq"
+                                viewBox="350 0 766 758" width="25" height="25">
                                 <title>Copiar link</title>
                                 <path class="cls-2"
                                   d="M806.32,188.44H597.7a34.87,34.87,0,0,0-34.84,34.73V466.71H597.7V223.17H806.32Z">
@@ -1678,7 +1679,16 @@
   document.getElementById("link-url").innerHTML = window.location.href;
   document.getElementById("link-url2").innerHTML = window.location.href;
 
-
+  const copiPix = () => {
+    const text_cop = document.getElementById("pix-copi")
+    navigator.clipboard.writeText(text_cop.innerHTML)
+      .then(() => {
+        console.log('Texto copiado para a área de transferência!');
+      })
+      .catch((error) => {
+        console.error('Falha ao copiar texto para a área de transferência:', error);
+      });
+  }
   function copiarTextoParaClipboard(texto) {
     const text_cop = document.getElementById("link-url")
     navigator.clipboard.writeText(text_cop.innerHTML)
