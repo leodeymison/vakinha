@@ -783,12 +783,13 @@
                   <div><strong style="font-size: 12px;color: #404040;">A Maior Campanha Solidária do RS</strong></div>
                   <div style="font-size: 12px;line-height: 16px;">ID Vaquinha: 4712837</div>
                   <div style="font-size: 12px;line-height: 16px;">ID Transação: 24229554</div>
-                  <div style="font-size: 12px;line-height: 16px;">Data: 04/05/2024</div>
-                  <div style="font-size: 12px;line-height: 16px;text-align: center;">E-mail:
+                  <!-- <div style="font-size: 12px;line-height: 16px;">Data: 04/05/2024</div> -->
+                  <!-- <div style="font-size: 12px;line-height: 16px;text-align: center;">E-mail:
                     <br />leodeymisonbasquete@gmaio.com
-                  </div>
+                  </div> -->
                   <div style="font-size: 12px;line-height: 16px;">Valor: <strong style="font-size: 12px;">R$
-                      90,00</strong></div>
+                      <div id="input_value"></div>
+                    </strong></div>
                   <div style="font-size: 12px;line-height: 16px;">Método: Pix</div>
                 </div>
               </div>
@@ -1151,6 +1152,8 @@
   }
 
   document.getElementById("qrcode").src = localStorage.getItem("pixQRCODE");
+
+  document.getElementById("input_value").innerHTML = localStorage.getItem("input_value")
 </script>
 
 </html>

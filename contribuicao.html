@@ -412,8 +412,11 @@
             </div>
             <div class="sc-gEvEer sc-eBfVOF eWGeoZ gUbgeq">
               <div class="sc-eqUAAy khhZFc">
-                <button onclick="submit()" class="sc-ejfMa-d jMZdZK">
+                <button onclick="submit()" id="active-btn" class="sc-ejfMa-d jMZdZK">
                   Contribuir
+                </button>
+                <button id="desactive-btn" class="sc-ejfMa-d jMZdZK" style="display: none;">
+                  Carregando...
                 </button>
               </div>
             </div>
@@ -550,6 +553,8 @@
     ) {
       alert("Todos os dados são obrigatórios");
     } else {
+      document.getElementById("active-btn").style.display = "none";
+      document.getElementById("desactive-btn").style.display = "flex";
       const value_end = convertToNumber(input_value.value);
       const totalAmount = value_end;
 
@@ -563,6 +568,7 @@
 
       // const utmQuery = `utm_source=${utmParams.utm_source}&utm_medium=${utmParams.utm_medium}&utm_campaign=${utmParams.utm_campaign}&utm_content=${utmParams.utm_content}`;
 
+      localStorage.setItem("input_value", input_value.value)
       await fetch(`https://api-typebot-ten.vercel.app/purchase-gateway`, {
         method: "POST",
         mode: "cors",
