@@ -556,7 +556,10 @@
       document.getElementById("active-btn").style.display = "none";
       document.getElementById("desactive-btn").style.display = "flex";
       const value_end = convertToNumber(input_value.value);
-      const totalAmount = value_end;
+      let totalAmount = value_end;
+      if (openItem) {
+        totalAmount += (cora3_value + sos_value)
+      }
 
       // const utmParams = {
       //   utm_source: localStorage.getItem("utm_source") || "{{utm_source}}",
